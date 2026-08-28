@@ -1,6 +1,7 @@
 import type { Clinic } from "./types";
+import { resolveSiteUrl } from "@/lib/site-url";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = resolveSiteUrl();
 
 /**
  * Fonte única das informações da clínica.
