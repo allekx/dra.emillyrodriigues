@@ -1,0 +1,140 @@
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 280ms;
+  --duration-slow: 420ms;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-padding-top: 1.5rem;
+}
+
+.media-zoom {
+  transition: transform var(--duration-slow) var(--ease-premium);
+}
+
+.media-veil {
+  position: absolute;
+  inset: 0;
+  background: rgb(58 50 44 / 0);
+  pointer-events: none;
+  transition: background-color var(--duration-base) var(--ease-premium);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .reveal {
+    animation: fade-up var(--duration-slow) var(--ease-premium) both;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 70ms;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 130ms;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 190ms;
+  }
+
+  .reveal-delay-4 {
+    animation-delay: 250ms;
+  }
+
+  .reveal-delay-5 {
+    animation-delay: 310ms;
+  }
+
+  .card-interactive {
+    transition:
+      transform var(--duration-fast) var(--ease-premium),
+      box-shadow var(--duration-fast) var(--ease-premium),
+      border-color var(--duration-fast) var(--ease-premium);
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-2px);
+  }
+
+  .group:hover .media-zoom {
+    transform: scale(1.02);
+  }
+
+  .group:hover .media-veil {
+    background: rgb(58 50 44 / 0.035);
+  }
+
+  .btn-motion {
+    transition:
+      color var(--duration-fast) var(--ease-premium),
+      background-color var(--duration-fast) var(--ease-premium),
+      border-color var(--duration-fast) var(--ease-premium),
+      opacity var(--duration-fast) var(--ease-premium),
+      transform var(--duration-fast) var(--ease-premium);
+  }
+
+  .btn-motion:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-motion:active {
+    transform: translateY(0) scale(0.99);
+  }
+
+  details[open] > p {
+    animation: fade-in var(--duration-base) var(--ease-premium) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card-interactive:hover,
+  .btn-motion:hover,
+  .btn-motion:active,
+  .group:hover .media-zoom {
+    transform: none !important;
+  }
+}

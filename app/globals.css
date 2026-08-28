@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "../styles/animations.css";
+
+@theme {
+  --font-serif: var(--font-cormorant), "Georgia", "Times New Roman", serif;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ivory: #f7f4f0;
+  --color-sand: #f1eae2;
+  --color-champagne: #e8dcce;
+  --color-nude: #e4d4c8;
+  --color-rose: #e8d4ce;
+  --color-gold: #b8956c;
+  --color-gold-soft: #c9b08a;
+  --color-taupe: #5c5148;
+  --color-ink: #3a322c;
+  --color-muted: #8a7e74;
+  --color-surface: #fbf9f6;
+  --color-border: #e6ddd4;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+
+  --shadow-soft: 0 8px 28px rgb(58 50 44 / 0.05);
+  --shadow-lift: 0 12px 32px rgb(58 50 44 / 0.07);
+
+  --breakpoint-xs: 23.4375rem;
+
+  --animate-fade-up: fade-up 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-taupe);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+a,
+button {
+  transition:
+    color var(--duration-fast) var(--ease-premium),
+    background-color var(--duration-fast) var(--ease-premium),
+    border-color var(--duration-fast) var(--ease-premium),
+    opacity var(--duration-fast) var(--ease-premium);
+}
