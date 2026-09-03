@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F7F4F0",
+  themeColor: "#F3EBE3",
   viewportFit: "cover",
 };
 
@@ -61,7 +61,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       className={`${fontSerif.variable} ${fontSans.variable}`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-dvh bg-ivory font-sans text-taupe antialiased">
+      <body className="min-h-dvh font-sans text-taupe antialiased">
+        <div className="page-grain" aria-hidden="true" />
         {children}
       </body>
     </html>

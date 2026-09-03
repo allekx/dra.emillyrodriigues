@@ -27,6 +27,18 @@
   }
 }
 
+@keyframes aura-breathe {
+  from {
+    opacity: 0.72;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
 html {
   scroll-padding-top: 1.5rem;
 }
@@ -97,15 +109,21 @@ html {
       background-color var(--duration-fast) var(--ease-premium),
       border-color var(--duration-fast) var(--ease-premium),
       opacity var(--duration-fast) var(--ease-premium),
-      transform var(--duration-fast) var(--ease-premium);
+      transform var(--duration-fast) var(--ease-premium),
+      box-shadow var(--duration-fast) var(--ease-premium);
   }
 
   .btn-motion:hover {
     transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgb(184 149 108 / 0.16);
   }
 
   .btn-motion:active {
     transform: translateY(0) scale(0.99);
+  }
+
+  .portrait-aura {
+    animation: aura-breathe 7s var(--ease-premium) infinite alternate;
   }
 
   details[open] > p {
@@ -135,6 +153,12 @@ html {
   .btn-motion:hover,
   .btn-motion:active,
   .group:hover .media-zoom {
+    transform: none !important;
+  }
+
+  .portrait-aura {
+    animation: none !important;
+    opacity: 1 !important;
     transform: none !important;
   }
 }

@@ -87,6 +87,7 @@ function defaultFaq(name: string): ServiceFaq[] {
  * Catálogo de serviços da clínica.
  * Preencha os campos abaixo com o conteúdo oficial.
  * Não utilize este arquivo para afirmações médicas não validadas pela clínica.
+ * Fotos JPG dos faciais são stock temporário (Unsplash/Pexels), até as oficiais da clínica.
  */
 export const services: Service[] = [
   {
@@ -104,7 +105,7 @@ export const services: Service[] = [
     process: defaultProcess,
     indicatedFor: defaultIndicatedFor,
     importantInfo: [],
-    image: "/images/services/harmonizacao-facial.svg",
+    image: "/images/services/harmonizacao-facial.jpg",
     featured: true,
     benefits: defaultBenefits,
     faq: defaultFaq("Harmonização Facial"),
@@ -124,7 +125,7 @@ export const services: Service[] = [
     process: defaultProcess,
     indicatedFor: defaultIndicatedFor,
     importantInfo: [],
-    image: "/images/services/botox.svg",
+    image: "/images/services/botox.jpg",
     featured: true,
     benefits: defaultBenefits,
     faq: defaultFaq("Botox"),
@@ -144,7 +145,7 @@ export const services: Service[] = [
     process: defaultProcess,
     indicatedFor: defaultIndicatedFor,
     importantInfo: [],
-    image: "/images/services/tratamentos-faciais.svg",
+    image: "/images/services/tratamentos-faciais.jpg",
     featured: true,
     benefits: defaultBenefits,
     faq: defaultFaq("Tratamentos Faciais"),
@@ -164,7 +165,7 @@ export const services: Service[] = [
     process: defaultProcess,
     indicatedFor: defaultIndicatedFor,
     importantInfo: [],
-    image: "/images/services/limpeza-de-pele.svg",
+    image: "/images/services/limpeza-de-pele.jpg",
     featured: false,
     benefits: defaultBenefits,
     faq: defaultFaq("Limpeza de Pele"),

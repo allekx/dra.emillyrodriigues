@@ -5,8 +5,8 @@ import { servicesPage } from "@/data/services";
 
 export function ServicesCta() {
   return (
-    <section className="mt-20 border-t border-border pt-14 pb-4 text-center sm:mt-24 sm:pt-16">
-      <h2 className="px-1 text-[1.65rem] leading-tight sm:text-3xl md:text-4xl">{servicesPage.ctaTitle}</h2>
+    <section className="mt-14 border-t border-border pt-10 pb-4 text-center sm:mt-20 sm:pt-14">
+      <h2 className="px-1 text-[1.45rem] leading-tight sm:text-3xl md:text-4xl">{servicesPage.ctaTitle}</h2>
       <div className="mt-8 flex justify-center">
         <Button
           href={getWhatsAppHref("services")}
