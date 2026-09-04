@@ -17,20 +17,33 @@ export const metadata = pageMetadata({
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-dvh">
-      <JsonLd data={getServicesListJsonLd()} />
-      <Container className="flex flex-col pb-4">
-        <main>
-          <ServicesHeader />
-          <ServiceCatalog />
-          <Reveal delay={1}>
-            <ServicesCta />
+    <div className="catalog-page min-h-dvh">
+      <div className="bio-stage" aria-hidden="true">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/clinic/catalogo.jpg"
+          alt=""
+          className="bio-stage-image catalog-stage-image"
+          decoding="async"
+          fetchPriority="low"
+        />
+        <span className="bio-stage-veil catalog-stage-veil" />
+      </div>
+      <div className="bio-content">
+        <JsonLd data={getServicesListJsonLd()} />
+        <Container className="flex flex-col pb-4">
+          <main>
+            <ServicesHeader />
+            <ServiceCatalog />
+            <Reveal delay={1}>
+              <ServicesCta />
+            </Reveal>
+          </main>
+          <Reveal delay={2}>
+            <Footer className="mt-10" />
           </Reveal>
-        </main>
-        <Reveal delay={2}>
-          <Footer className="mt-10" />
-        </Reveal>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

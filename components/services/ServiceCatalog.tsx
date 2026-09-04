@@ -38,7 +38,7 @@ export function ServiceCatalog() {
               <div className="flex items-end justify-between gap-3">
                 <h2
                   id={`categoria-${group.category}`}
-                  className="text-[0.62rem] font-light tracking-[0.18em] text-muted uppercase min-[375px]:text-[0.65rem] sm:tracking-[0.24em]"
+                  className="text-[0.62rem] font-medium tracking-[0.18em] text-taupe uppercase min-[375px]:text-[0.65rem] sm:tracking-[0.24em]"
                 >
                   {group.label}
                 </h2>

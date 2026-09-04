@@ -130,6 +130,41 @@ body > :not(.page-grain) {
   );
 }
 
+.catalog-page {
+  position: relative;
+}
+
+.catalog-stage-image {
+  object-position: center 42%;
+}
+
+.catalog-stage-veil {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(247 240 232 / 0.84) 0%,
+      rgb(247 240 232 / 0.68) 28%,
+      rgb(247 240 232 / 0.55) 52%,
+      rgb(247 240 232 / 0.78) 100%
+    ),
+    radial-gradient(ellipse 78% 46% at 50% 12%, rgb(255 248 238 / 0.4), transparent 70%);
+}
+
+.catalog-page .catalog-chips {
+  background: color-mix(in srgb, var(--color-ivory) 90%, transparent);
+  border-bottom-color: rgb(227 214 202 / 0.7);
+}
+
+.catalog-caption {
+  padding: 0.65rem 0.2rem 0.1rem;
+  background: radial-gradient(
+    ellipse 110% 90% at 50% 30%,
+    rgb(248 243 237 / 0.9) 0%,
+    rgb(248 243 237 / 0.4) 62%,
+    transparent 80%
+  );
+}
+
 .bio-page .portrait::before,
 .bio-page .portrait::after {
   content: "";
@@ -262,4 +297,16 @@ button {
 .catalog-chip:hover {
   border-color: var(--color-gold-soft);
   color: var(--color-ink);
+}
+
+.highlight-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(58 50 44 / 0.12) 0%,
+    rgb(58 50 44 / 0.28) 42%,
+    rgb(58 50 44 / 0.72) 100%
+  );
+  pointer-events: none;
 }

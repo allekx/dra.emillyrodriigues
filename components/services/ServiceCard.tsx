@@ -74,8 +74,8 @@ export function ServiceCard({
           <span className="media-veil" />
         </div>
 
-        <div className="px-0.5 pt-3">
-          <p className="text-[0.58rem] font-light tracking-[0.16em] text-gold uppercase min-[375px]:text-[0.6rem]">
+        <div className="catalog-caption">
+          <p className="text-[0.58rem] font-medium tracking-[0.16em] text-gold uppercase min-[375px]:text-[0.6rem]">
             {category}
           </p>
           <h3 className="mt-1 font-serif text-[0.98rem] leading-snug tracking-[-0.02em] text-ink min-[375px]:text-[1.05rem]">
