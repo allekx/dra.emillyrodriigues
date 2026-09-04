@@ -66,6 +66,105 @@ body > :not(.page-grain) {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+.bio-page {
+  position: relative;
+}
+
+.bio-stage {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bio-stage-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.bio-stage-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(247 240 232 / 0.82) 0%,
+      rgb(247 240 232 / 0.7) 32%,
+      rgb(247 240 232 / 0.58) 58%,
+      rgb(247 240 232 / 0.8) 100%
+    ),
+    radial-gradient(ellipse 70% 48% at 50% 18%, rgb(255 248 238 / 0.45), transparent 72%);
+}
+
+.bio-content {
+  position: relative;
+  z-index: 1;
+  margin-top: -100dvh;
+  min-height: 100dvh;
+}
+
+.bio-legend {
+  margin-top: 1.75rem;
+  padding: 0.85rem 0.75rem 1rem;
+  background: radial-gradient(
+    ellipse 92% 78% at 50% 42%,
+    rgb(248 243 237 / 0.92) 0%,
+    rgb(248 243 237 / 0.55) 58%,
+    transparent 78%
+  );
+}
+
+.bio-copy {
+  padding: 0.65rem 0.85rem 0.8rem;
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 50%,
+    rgb(248 243 237 / 0.9) 0%,
+    rgb(248 243 237 / 0.42) 62%,
+    transparent 80%
+  );
+}
+
+.bio-page .portrait::before,
+.bio-page .portrait::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  border: 1px solid rgb(184 149 108 / 0.16);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.bio-page .portrait::before {
+  width: 12.4rem;
+  height: 12.4rem;
+}
+
+.bio-page .portrait::after {
+  width: 15.1rem;
+  height: 15.1rem;
+  border-color: rgb(184 149 108 / 0.09);
+}
+
+@media (min-width: 640px) {
+  .bio-page .portrait::before {
+    width: 13.6rem;
+    height: 13.6rem;
+  }
+
+  .bio-page .portrait::after {
+    width: 16.4rem;
+    height: 16.4rem;
+  }
+}
+
 .portrait {
   position: relative;
 }

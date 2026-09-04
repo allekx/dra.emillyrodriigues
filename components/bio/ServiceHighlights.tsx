@@ -10,7 +10,7 @@ export function ServiceHighlights() {
     <section aria-labelledby="bio-servicos-titulo">
       <h2
         id="bio-servicos-titulo"
-        className="text-center text-[0.68rem] font-light tracking-[0.28em] text-muted uppercase"
+        className="text-center text-[0.68rem] font-medium tracking-[0.28em] text-taupe uppercase"
       >
         Especialidades
       </h2>

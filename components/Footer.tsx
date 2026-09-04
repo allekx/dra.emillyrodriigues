@@ -15,7 +15,7 @@ export function Footer({ className }: FooterProps) {
 
   return (
     <footer className={cn("px-2 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-6 text-center", className)}>
-      <p className="text-[0.62rem] leading-relaxed font-light tracking-[0.08em] text-muted min-[375px]:text-[0.65rem] sm:tracking-[0.12em]">
+      <p className="text-[0.62rem] leading-relaxed font-normal tracking-[0.08em] text-taupe min-[375px]:text-[0.65rem] sm:tracking-[0.12em]">
         <Link href={routes.bio} className="text-inherit no-underline hover:text-ink">
           {clinic.name}
         </Link>
