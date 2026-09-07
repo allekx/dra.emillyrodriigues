@@ -50,6 +50,8 @@ export const clinic: Clinic = {
 export const whatsappMessages = {
   bio: "Olá! Vim pelo Instagram e gostaria de conhecer os serviços da Dra. Emilly Rodrigues.",
   services: "Olá! Gostaria de saber mais sobre os serviços da Dra. Emilly Rodrigues.",
+  booking:
+    "Olá! Vim pelo Instagram e gostaria de agendar uma avaliação com a Dra. Emilly Rodrigues.",
 } as const;
 
 export function getServiceWhatsAppMessage(name: string) {

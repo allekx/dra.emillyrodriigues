@@ -18,7 +18,7 @@ export const metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <div className="catalog-page min-h-dvh">
-      <div className="bio-stage" aria-hidden="true">
+      <div className="bio-stage catalog-stage" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/clinic/catalogo.jpg"
@@ -27,11 +27,13 @@ export default function ServicesPage() {
           decoding="async"
           fetchPriority="low"
         />
-        <span className="bio-stage-veil catalog-stage-veil" />
+        <span className="catalog-stage-grade" />
+        <span className="catalog-stage-veil" />
+        <span className="catalog-stage-glow" />
       </div>
       <div className="bio-content">
         <JsonLd data={getServicesListJsonLd()} />
-        <Container className="flex flex-col pb-4">
+        <Container size="narrow" className="flex flex-col pb-4">
           <main>
             <ServicesHeader />
             <ServiceCatalog />
@@ -40,7 +42,7 @@ export default function ServicesPage() {
             </Reveal>
           </main>
           <Reveal delay={2}>
-            <Footer className="mt-10" />
+            <Footer className="mt-6" />
           </Reveal>
         </Container>
       </div>

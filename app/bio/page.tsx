@@ -37,12 +37,6 @@ export default function BioPage() {
               <BioIdentity />
             </div>
 
-            <Reveal delay={2}>
-              <p className="bio-copy mx-auto mt-6 max-w-[21rem] px-1 text-center text-[0.92rem] leading-7 font-normal text-ink min-[375px]:text-[0.975rem]">
-                {clinic.presentation}
-              </p>
-            </Reveal>
-
             <Reveal delay={3} className="mt-10">
               <BioCta />
             </Reveal>

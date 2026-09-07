@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { clinic } from "@/data/clinic";
 import { fontSans, fontSerif } from "@/lib/fonts";
 import { getSiteTitle } from "@/lib/seo";
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="min-h-dvh font-sans text-taupe antialiased">
         <div className="page-grain" aria-hidden="true" />
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

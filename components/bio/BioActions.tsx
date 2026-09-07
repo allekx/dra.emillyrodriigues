@@ -9,12 +9,23 @@ import {
 
 export function BioCta() {
   return (
-    <Button
-      href={routes.services}
-      className="w-full min-h-14 tracking-[0.1em] whitespace-normal sm:tracking-[0.16em]"
-    >
-      Conheça nossos serviços
-    </Button>
+    <div className="flex w-full flex-col gap-3">
+      <Button
+        href={routes.services}
+        className="w-full min-h-14 tracking-[0.1em] whitespace-normal sm:tracking-[0.16em]"
+      >
+        Conheça nossos serviços
+      </Button>
+      <Button
+        href={getWhatsAppHref("booking")}
+        variant="accent"
+        className="w-full min-h-14 gap-2.5 tracking-[0.08em] whitespace-normal sm:tracking-[0.12em]"
+        aria-label="Agendar avaliação pelo WhatsApp"
+      >
+        <WhatsAppMark className="h-4 w-4 shrink-0" />
+        Agendar avaliação
+      </Button>
+    </div>
   );
 }
 

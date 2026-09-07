@@ -4,12 +4,13 @@ type ContainerProps = {
   as?: "div" | "main" | "section" | "header" | "footer" | "article";
   children: React.ReactNode;
   className?: string;
-  size?: "default" | "narrow";
+  size?: "default" | "narrow" | "wide";
 };
 
 const sizes = {
   default: "max-w-5xl",
   narrow: "max-w-[26.5rem] sm:max-w-md",
+  wide: "max-w-6xl",
 } as const;
 
 export function Container({
@@ -21,7 +22,8 @@ export function Container({
   return (
     <Component
       className={cn(
-        "mx-auto w-full min-w-0 px-4 min-[375px]:px-5 sm:px-8 lg:px-12",
+        "mx-auto w-full min-w-0 px-4 min-[375px]:px-5 sm:px-8",
+        size !== "narrow" && "lg:px-12",
         sizes[size],
         className,
       )}
