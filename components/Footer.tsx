@@ -23,7 +23,7 @@ export function Footer({ className }: FooterProps) {
         {locality ? ` · ${locality}` : ""}
       </p>
       <p className="mt-2 text-[0.58rem] leading-relaxed tracking-[0.06em] text-taupe/80 min-[375px]:text-[0.6rem]">
-        © {year} {clinic.name}. Todos os direitos reservados.
+        © {year} Todos os direitos reservados.
       </p>
     </footer>
   );
