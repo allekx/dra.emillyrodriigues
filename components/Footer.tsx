@@ -8,6 +8,7 @@ type FooterProps = {
 };
 
 export function Footer({ className }: FooterProps) {
+  const year = new Date().getFullYear();
   const locality =
     clinic.address.confirmed
       ? [clinic.address.city, clinic.address.state].filter(Boolean).join(" — ")
@@ -20,6 +21,9 @@ export function Footer({ className }: FooterProps) {
           {clinic.name}
         </Link>
         {locality ? ` · ${locality}` : ""}
+      </p>
+      <p className="mt-2 text-[0.58rem] leading-relaxed tracking-[0.06em] text-taupe/80 min-[375px]:text-[0.6rem]">
+        © {year} {clinic.name}. Todos os direitos reservados.
       </p>
     </footer>
   );
