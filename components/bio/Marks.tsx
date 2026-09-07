@@ -138,6 +138,22 @@ export function InstagramMark({ className }: MarkProps) {
   );
 }
 
+export function TwitterMark({ className }: MarkProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M4.5 4.5L10.9 12.4L4.7 19.5H6.5L11.7 13.5L16.1 19.5H19.5L12.8 11.2L18.6 4.5H16.8L12 10.1L8 4.5H4.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export function LocationMark({ className }: MarkProps) {
   return (
     <svg

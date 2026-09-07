@@ -1,4 +1,4 @@
-import { BioCta, BioLinks } from "@/components/bio/BioActions";
+import { BioCta } from "@/components/bio/BioActions";
 import { BioIdentity } from "@/components/bio/BioIdentity";
 import { ServiceHighlights } from "@/components/bio/ServiceHighlights";
 import { Container } from "@/components/Container";
@@ -44,13 +44,9 @@ export default function BioPage() {
             <Reveal delay={4} className="mt-14">
               <ServiceHighlights />
             </Reveal>
-
-            <Reveal delay={5} className="mt-12">
-              <BioLinks />
-            </Reveal>
           </main>
 
-          <Reveal delay={6}>
+          <Reveal delay={5}>
             <Footer className="mt-6" />
           </Reveal>
         </Container>

@@ -19,10 +19,7 @@ export function WhatsAppFloat() {
   const href = getWhatsAppHref("booking");
 
   useEffect(() => {
-    const reduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const timer = window.setTimeout(() => setShowPopup(true), reduced ? 0 : 1200);
+    const timer = window.setTimeout(() => setShowPopup(true), 7000);
     return () => window.clearTimeout(timer);
   }, []);
 

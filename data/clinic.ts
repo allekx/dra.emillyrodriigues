@@ -24,6 +24,7 @@ export const clinic: Clinic = {
     whatsappUrl: "https://wa.me/qr/HDHATZBA2PFQL1",
     instagram: "dra.emillyrodriigues",
     instagramUrl: "https://www.instagram.com/dra.emillyrodriigues",
+    twitterUrl: "",
     email: "",
     instagramConfirmed: true,
   },

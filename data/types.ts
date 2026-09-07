@@ -4,6 +4,7 @@ export type ClinicContact = {
   whatsappUrl?: string;
   instagram: string;
   instagramUrl: string;
+  twitterUrl?: string;
   email: string;
   instagramConfirmed: boolean;
 };
