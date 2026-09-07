@@ -110,12 +110,23 @@ html {
     animation-delay: 960ms;
   }
 
+  /* Entrada só com fade — scale no fundo grande causa stutter no scroll mobile. */
   .bio-stage-image {
-    animation: stage-in 1.55s var(--ease-premium) both;
+    animation: fade-in 0.7s var(--ease-premium) both;
   }
 
   .bio-stage-veil {
-    animation: veil-in 1.25s var(--ease-premium) 120ms both;
+    animation: fade-in 0.85s var(--ease-premium) 80ms both;
+  }
+
+  @media (min-width: 1024px) {
+    .bio-stage-image {
+      animation: stage-in 1.55s var(--ease-premium) both;
+    }
+
+    .bio-stage-veil {
+      animation: veil-in 1.25s var(--ease-premium) 120ms both;
+    }
   }
 
   .bio-page .portrait::before,

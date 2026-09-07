@@ -54,9 +54,10 @@ export function ServiceHighlights() {
     const slide = track?.children[index] as HTMLElement | undefined;
     if (!track || !slide) return;
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     track.scrollTo({
       left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2,
-      behavior: "smooth",
+      behavior: reduceMotion ? "auto" : "smooth",
     });
   }
 
