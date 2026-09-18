@@ -1,6 +1,6 @@
 import { MediaImage } from "@/components/MediaImage";
 import Link from "next/link";
-import { categoryLabels } from "@/data/services";
+import { categoryLabels, kindLabels } from "@/data/services";
 import { routes } from "@/data/routes";
 import type { Service } from "@/data/types";
 
@@ -16,8 +16,10 @@ export function ServiceCard({
   layout = "tile",
 }: ServiceCardProps) {
   const category = categoryLabels[service.category];
+  const kind = kindLabels[service.kind];
   const href = routes.service(service.slug);
   const label = `${service.name}. Saiba mais.`;
+  const eyebrow = `${kind}`;
 
   if (layout === "editorial") {
     return (
@@ -41,7 +43,8 @@ export function ServiceCard({
 
           <div className="flex min-w-0 flex-col justify-center px-3.5 py-3.5 min-[375px]:px-4">
             <p className="text-[0.58rem] font-medium tracking-[0.16em] text-gold uppercase min-[375px]:text-[0.62rem]">
-              {category}
+              {eyebrow}
+              <span className="text-muted"> · {category}</span>
             </p>
             <h3 className="mt-1.5 font-serif text-[1.15rem] leading-[1.15] tracking-[-0.02em] text-ink min-[375px]:text-[1.28rem]">
               {service.name}
@@ -76,7 +79,7 @@ export function ServiceCard({
 
         <div className="catalog-caption">
           <p className="text-[0.58rem] font-medium tracking-[0.16em] text-gold uppercase min-[375px]:text-[0.6rem]">
-            {category}
+            {eyebrow}
           </p>
           <h3 className="mt-1 font-serif text-[0.98rem] leading-snug tracking-[-0.02em] text-ink min-[375px]:text-[1.05rem]">
             {service.name}

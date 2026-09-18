@@ -9,13 +9,15 @@ Produção atual: [dra-emillyrodriigues.vercel.app](https://dra-emillyrodriigues
 ## Escopo
 
 - Bio (`/bio`) com identidade, CTAs, redes e carrossel de especialidades
-- Catálogo (`/servicos`) e páginas por slug (`/servicos/[slug]`)
+- Catálogo (`/servicos`) com planos e procedimentos (sem preços no site)
+- Páginas por slug (`/servicos/[slug]`) com formulário **Tenho interesse**
+- API `POST /api/interest` preparada para integração futura com CRM/sistema interno
 - Botão flutuante de WhatsApp em todas as páginas
-- Conversão via WhatsApp e Instagram
+- Conversão via WhatsApp, Instagram e captura de leads
 - SEO (metadata, Open Graph, sitemap, robots, JSON-LD)
 - Layout mobile-first; no desktop (≥1024px) a bio/catálogo ficam numa coluna central (~28rem)
 
-**Fora do escopo:** CRM, login, banco de dados, agendamento online ou painel admin.
+**Fora do escopo (por enquanto):** CRM completo, login, banco de dados, agendamento online ou painel admin.
 
 ## Rotas
 
@@ -28,9 +30,11 @@ Produção atual: [dra-emillyrodriigues.vercel.app](https://dra-emillyrodriigues
 | `/sitemap.xml` | Sitemap |
 | `/robots.txt` | Robots |
 
-Slugs: `harmonizacao-facial`, `botox`, `tratamentos-faciais`, `limpeza-de-pele`, `tratamentos-corporais`, `procedimentos-esteticos`.
+Categorias: **Injetáveis**, **Obesidade & Emagrecimento**, **Saúde Estética**.
 
-Destaques do carrossel na bio (`featured: true` em `data/services.ts`): harmonização facial, botox, tratamentos faciais e tratamentos corporais.
+Os itens (planos, protocolos e procedimentos) estão em `data/services.ts`. Sem valores no site.
+
+Destaques do carrossel na bio (`featured: true`): Bioestimulador Face, Toxina Botulínica — 3 áreas, Plano START 30 e Limpeza Facial Profunda.
 
 ## Como rodar
 
@@ -63,7 +67,8 @@ NEXT_PUBLIC_SITE_URL=https://www.seudominio.com.br
 | Arquivo | O que altera |
 |---------|-------------|
 | `data/clinic.ts` | Nome, tagline, credencial, textos, WhatsApp, Instagram, Twitter/X, endereço, foto |
-| `data/services.ts` | Serviços, textos, FAQs, imagens, destaques da bio (`featured`) |
+| `data/services.ts` | Planos/procedimentos, textos, FAQs, imagens, formulário de interesse, destaques da bio |
+| `app/api/interest/route.ts` | Recebe leads do formulário (ponto de integração futura) |
 | `data/routes.ts` | Caminhos das rotas |
 | `public/images/` | Fotos e assets estáticos |
 | `components/Footer.tsx` | Rodapé e copyright |

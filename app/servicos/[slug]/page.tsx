@@ -58,7 +58,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <ServiceFaqList items={service.faq} />
           </div>
           <div className="reveal reveal-delay-1">
-            <ServiceCta name={service.name} />
+            <ServiceCta service={service} />
           </div>
         </main>
         <Footer className="reveal reveal-delay-2 mt-10" />

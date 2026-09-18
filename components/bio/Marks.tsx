@@ -174,10 +174,10 @@ export function LocationMark({ className }: MarkProps) {
 }
 
 const marks = {
-  "harmonizacao-facial": HarmonizacaoMark,
-  botox: BotoxMark,
-  "tratamentos-faciais": FaciaisMark,
-  "tratamentos-corporais": CorporaisMark,
+  "bioestimulador-face": HarmonizacaoMark,
+  "toxina-botulinica-3-areas": BotoxMark,
+  "limpeza-facial-profunda": FaciaisMark,
+  "plano-start-30": CorporaisMark,
 } as const;
 
 export function ServiceMark({

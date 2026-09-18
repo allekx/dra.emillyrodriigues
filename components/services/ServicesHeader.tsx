@@ -1,7 +1,7 @@
 import { NavBack } from "@/components/NavBack";
 import { clinic } from "@/data/clinic";
 import { routes } from "@/data/routes";
-import { services, servicesPage } from "@/data/services";
+import { servicesPage } from "@/data/services";
 
 export function ServicesHeader() {
   return (
@@ -19,9 +19,6 @@ export function ServicesHeader() {
         </h1>
         <p className="mt-3 max-w-md text-[0.9rem] leading-6 font-normal text-ink min-[375px]:text-[0.95rem] min-[375px]:leading-7">
           {servicesPage.subtitle}
-        </p>
-        <p className="mt-3 text-[0.6rem] font-medium tracking-[0.16em] text-taupe uppercase">
-          {services.length} cuidados
         </p>
       </div>
     </header>

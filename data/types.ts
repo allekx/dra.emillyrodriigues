@@ -37,17 +37,36 @@ export type ServiceFaq = {
   answer: string;
 };
 
-export type ServiceCategory = "facial" | "corporal" | "estetica" | "outros";
+export type ServiceCategory = "injetaveis" | "obesidade" | "saude-estetica";
+
+export type ServiceKind = "procedimento" | "plano" | "protocolo";
 
 export type ServiceProcessStep = {
   title: string;
   description: string;
 };
 
+export type InterestFieldType =
+  | "text"
+  | "tel"
+  | "email"
+  | "textarea"
+  | "select";
+
+export type InterestField = {
+  id: string;
+  label: string;
+  type: InterestFieldType;
+  required?: boolean;
+  options?: string[];
+  placeholder?: string;
+};
+
 export type Service = {
   name: string;
   slug: string;
   category: ServiceCategory;
+  kind: ServiceKind;
   shortDescription: string;
   description: string;
   objective: string;
@@ -59,4 +78,16 @@ export type Service = {
   featured: boolean;
   benefits: string[];
   faq: ServiceFaq[];
+  /** Perguntas específicas exibidas no formulário “Tenho interesse”. */
+  interestFields: InterestField[];
+};
+
+export type InterestLeadPayload = {
+  serviceSlug: string;
+  serviceName: string;
+  category: ServiceCategory;
+  kind: ServiceKind;
+  answers: Record<string, string>;
+  submittedAt: string;
+  source: "servicos";
 };

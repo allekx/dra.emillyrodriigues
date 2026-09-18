@@ -1,11 +1,10 @@
 import { MediaImage } from "@/components/MediaImage";
 import { Button } from "@/components/Button";
 import { NavBack } from "@/components/NavBack";
-import { WhatsAppMark } from "@/components/bio/Marks";
-import { getServiceWhatsAppHref } from "@/data/clinic";
 import { routes } from "@/data/routes";
 import {
   categoryLabels,
+  kindLabels,
   servicePageCopy,
 } from "@/data/services";
 import type { Service } from "@/data/types";
@@ -15,14 +14,12 @@ type ServiceHeroProps = {
 };
 
 export function ServiceHero({ service }: ServiceHeroProps) {
-  const whatsappHref = getServiceWhatsAppHref(service.name);
-
   return (
     <header className="pt-8 sm:pt-12">
       <NavBack href={routes.services}>Voltar para serviços</NavBack>
 
       <p className="mt-10 text-[0.65rem] font-light tracking-[0.18em] text-gold uppercase min-[375px]:text-[0.68rem] min-[375px]:tracking-[0.24em] sm:mt-14 sm:tracking-[0.28em]">
-        {categoryLabels[service.category]}
+        {categoryLabels[service.category]} · {kindLabels[service.kind]}
       </p>
       <h1 className="mt-4 max-w-xl text-[1.85rem] leading-[1.12] sm:text-5xl lg:text-[3.35rem]">
         {service.name}
@@ -47,11 +44,10 @@ export function ServiceHero({ service }: ServiceHeroProps) {
           </p>
           <div className="mt-8">
             <Button
-              href={whatsappHref}
+              href="#interesse"
               className="min-h-14 w-full max-w-full gap-2.5 px-4 tracking-[0.06em] whitespace-normal sm:px-5 sm:tracking-[0.08em] lg:w-auto"
               aria-label={servicePageCopy.interestCta}
             >
-              <WhatsAppMark className="h-4 w-4 shrink-0" />
               {servicePageCopy.interestCta}
             </Button>
           </div>

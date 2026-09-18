@@ -1,5 +1,5 @@
 import { ContentSection } from "@/components/service-page/ContentSection";
-import { servicePageCopy } from "@/data/services";
+import { kindLabels, servicePageCopy } from "@/data/services";
 import type { Service } from "@/data/types";
 
 type ServiceDetailsProps = {
@@ -12,9 +12,16 @@ export function ServiceDetails({ service }: ServiceDetailsProps) {
       ? service.importantInfo
       : [servicePageCopy.notesPlaceholder];
 
+  const aboutTitle =
+    service.kind === "plano"
+      ? "Sobre o plano"
+      : service.kind === "protocolo"
+        ? "Sobre o protocolo"
+        : "Sobre o procedimento";
+
   return (
     <div className="mt-16 flex flex-col gap-4 sm:mt-20">
-      <ContentSection id="sobre" title="Sobre o procedimento">
+      <ContentSection id="sobre" title={aboutTitle}>
         <div className="flex flex-col gap-8">
           <div>
             <h3 className="font-serif text-xl text-ink sm:text-2xl">O que é</h3>
@@ -88,6 +95,9 @@ export function ServiceDetails({ service }: ServiceDetailsProps) {
       ) : null}
 
       <ContentSection id="orientacoes" title="Informações importantes">
+        <p className="mb-4 text-[0.72rem] font-medium tracking-[0.14em] text-gold uppercase">
+          {kindLabels[service.kind]}
+        </p>
         <ul className="flex flex-col gap-4">
           {notes.map((note) => (
             <li
